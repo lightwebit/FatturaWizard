@@ -5,7 +5,7 @@ FatturaWizard è un'applicazione dimostrativa **WPF (.NET)** pensata come vetrin
 ---
 
 ## Perché questo progetto
-FatturaWizard è pensato come progetto vetrina per sviluppatori e consulenti che vogliono mostrare competenze pratiche su:
+FatturaWizard è pensato come progetto esemplificativo per sviluppatori e consulenti per:
 - integrazione del formato *Fattura Elettronica* in applicazioni .NET;
 - serializzazione / deserializzazione XML con `XmlSerializer`;
 - binding e DataGrid in WPF per la compilazione delle linee di fattura;
