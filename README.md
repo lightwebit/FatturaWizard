@@ -25,7 +25,7 @@ FatturaWizard è pensato come progetto esemplificativo per sviluppatori e consul
 ## Requisiti
 - **.NET 9 SDK** (target `net9.0`)
 - Windows con supporto WPF
-- (Opzionale) Visual Studio 2022 / 2023 / 2024 con workload `.NET Desktop Development`
+- (Opzionale) Visual Studio 2022 con workload `.NET Desktop Development`
 
 > Nota: il progetto demo qui incluso è pensato per essere un punto di partenza: per l'invio allo SDI (Sistema di Interscambio) è necessario rispettare tutte le regole di validazione, firma digitale e formattazione richieste dall'Agenzia delle Entrate.
 
