@@ -1,0 +1,333 @@
+﻿<Window x:Class="FatturaWizard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Fattura Elettronica Wizard" Height="800" Width="1200"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TabControl>
+            <!-- Tab Dati Trasmissione -->
+            <TabItem Header="Dati Trasmissione">
+                <ScrollViewer>
+                    <StackPanel Margin="20">
+                        <GroupBox Header="Id Trasmittente" Margin="0,0,0,10">
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Content="Paese ID:"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtIdPaese" Text="IT" Margin="5"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" Content="Codice ID:"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtIdCodice" Margin="5"/>
+
+                                <Label Grid.Row="2" Grid.Column="0" Content="Progressivo Invio:"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtProgressivoInvio" Margin="5"/>
+
+                                <Label Grid.Row="3" Grid.Column="0" Content="Formato Trasmissione:"/>
+                                <ComboBox Grid.Row="3" Grid.Column="1" x:Name="cmbFormatoTrasmissione" Margin="5">
+                                    <ComboBoxItem Content="FPR12" IsSelected="True"/>
+                                    <ComboBoxItem Content="FPA12"/>
+                                </ComboBox>
+                            </Grid>
+                        </GroupBox>
+
+                        <GroupBox Header="Destinatario">
+                            <Grid Margin="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0" Content="Codice Destinatario:"/>
+                                <TextBox Grid.Column="1" x:Name="txtCodiceDestinatario" Margin="5"/>
+                            </Grid>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <!-- Tab Cedente/Prestatore -->
+            <TabItem Header="Cedente/Prestatore">
+                <ScrollViewer>
+                    <StackPanel Margin="20">
+                        <GroupBox Header="Dati Fiscali" Margin="0,0,0,10">
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Content="Paese IVA:"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtCedentePaeseIVA" Text="IT" Margin="5"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" Content="Codice IVA:"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtCedenteCodiceIVA" Margin="5"/>
+
+                                <Label Grid.Row="2" Grid.Column="0" Content="Codice Fiscale:"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtCedenteCodiceFiscale" Margin="5"/>
+
+                                <Label Grid.Row="3" Grid.Column="0" Content="Nome:"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtCedenteNome" Margin="5"/>
+
+                                <Label Grid.Row="4" Grid.Column="0" Content="Cognome:"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtCedenteCognome" Margin="5"/>
+
+                                <Label Grid.Row="5" Grid.Column="0" Content="Denominazione:"/>
+                                <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtCedenteDenominazione" Margin="5"/>
+                            </Grid>
+                        </GroupBox>
+
+                        <GroupBox Header="Sede">
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Content="Indirizzo:"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtCedenteIndirizzo" Margin="5"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" Content="Numero Civico:"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtCedenteNumeroCivico" Margin="5"/>
+
+                                <Label Grid.Row="2" Grid.Column="0" Content="CAP:"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtCedenteCAP" Margin="5"/>
+
+                                <Label Grid.Row="3" Grid.Column="0" Content="Comune:"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtCedenteComune" Margin="5"/>
+
+                                <Label Grid.Row="4" Grid.Column="0" Content="Provincia:"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtCedenteProvincia" Margin="5"/>
+
+                                <Label Grid.Row="5" Grid.Column="0" Content="Nazione:"/>
+                                <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtCedenteNazione" Text="IT" Margin="5"/>
+                            </Grid>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <!-- Tab Cessionario/Committente -->
+            <TabItem Header="Cessionario/Committente">
+                <ScrollViewer>
+                    <StackPanel Margin="20">
+                        <GroupBox Header="Dati Fiscali" Margin="0,0,0,10">
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Content="Paese IVA:"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtCessionarioPaeseIVA" Text="IT" Margin="5"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" Content="Codice IVA:"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtCessionarioCodiceIVA" Margin="5"/>
+
+                                <Label Grid.Row="2" Grid.Column="0" Content="Codice Fiscale:"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtCessionarioCodiceFiscale" Margin="5"/>
+
+                                <Label Grid.Row="3" Grid.Column="0" Content="Nome:"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtCessionarioNome" Margin="5"/>
+
+                                <Label Grid.Row="4" Grid.Column="0" Content="Cognome:"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtCessionarioCognome" Margin="5"/>
+
+                                <Label Grid.Row="5" Grid.Column="0" Content="Denominazione:"/>
+                                <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtCessionarioDenominazione" Margin="5"/>
+                            </Grid>
+                        </GroupBox>
+
+                        <GroupBox Header="Sede">
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Content="Indirizzo:"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtCessionarioIndirizzo" Margin="5"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" Content="Numero Civico:"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtCessionarioNumeroCivico" Margin="5"/>
+
+                                <Label Grid.Row="2" Grid.Column="0" Content="CAP:"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtCessionarioCAP" Margin="5"/>
+
+                                <Label Grid.Row="3" Grid.Column="0" Content="Comune:"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtCessionarioComune" Margin="5"/>
+
+                                <Label Grid.Row="4" Grid.Column="0" Content="Provincia:"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtCessionarioProvincia" Margin="5"/>
+
+                                <Label Grid.Row="5" Grid.Column="0" Content="Nazione:"/>
+                                <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtCessionarioNazione" Text="IT" Margin="5"/>
+                            </Grid>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <!-- Tab Dati Documento -->
+            <TabItem Header="Dati Documento">
+                <ScrollViewer>
+                    <StackPanel Margin="20">
+                        <GroupBox Header="Informazioni Documento">
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Content="Tipo Documento:"/>
+                                <ComboBox Grid.Row="0" Grid.Column="1" x:Name="cmbTipoDocumento" Margin="5">
+                                    <ComboBoxItem Content="TD01" IsSelected="True"/>
+                                    <ComboBoxItem Content="TD02"/>
+                                    <ComboBoxItem Content="TD03"/>
+                                    <ComboBoxItem Content="TD04"/>
+                                    <ComboBoxItem Content="TD05"/>
+                                    <ComboBoxItem Content="TD06"/>
+                                </ComboBox>
+
+                                <Label Grid.Row="1" Grid.Column="0" Content="Divisa:"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtDivisa" Text="EUR" Margin="5"/>
+
+                                <Label Grid.Row="2" Grid.Column="0" Content="Data:"/>
+                                <DatePicker Grid.Row="2" Grid.Column="1" x:Name="dpData" Margin="5"/>
+
+                                <Label Grid.Row="3" Grid.Column="0" Content="Numero:"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtNumero" Margin="5"/>
+
+                                <Label Grid.Row="4" Grid.Column="0" Content="Causale:"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtCausale" Margin="5"/>
+
+                                <Label Grid.Row="5" Grid.Column="0" Content="Importo Totale:"/>
+                                <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtImportoTotale" Margin="5"/>
+                            </Grid>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <!-- Tab Dettaglio Linee -->
+            <TabItem Header="Dettaglio Linee">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <DataGrid Grid.Row="0" x:Name="dgDettaglioLinee" Margin="10" AutoGenerateColumns="False" 
+                              CanUserAddRows="True" CanUserDeleteRows="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Numero Linea" Binding="{Binding NumeroLinea}" Width="100"/>
+                            <DataGridTextColumn Header="Descrizione" Binding="{Binding Descrizione}" Width="200"/>
+                            <DataGridTextColumn Header="Quantità" Binding="{Binding Quantita}" Width="80"/>
+                            <DataGridTextColumn Header="Prezzo Unitario" Binding="{Binding PrezzoUnitario}" Width="120"/>
+                            <DataGridTextColumn Header="Prezzo Totale" Binding="{Binding PrezzoTotale}" Width="120"/>
+                            <DataGridTextColumn Header="Aliquota IVA" Binding="{Binding AliquotaIVA}" Width="100"/>
+                            <DataGridTextColumn Header="Natura" Binding="{Binding Natura}" Width="80"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                        <Button x:Name="btnAggiungiLinea" Content="Aggiungi Linea" Margin="5" Padding="10,5" Click="btnAggiungiLinea_Click"/>
+                        <Button x:Name="btnRimuoviLinea" Content="Rimuovi Linea" Margin="5" Padding="10,5" Click="btnRimuoviLinea_Click"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <!-- Tab Riepilogo -->
+            <TabItem Header="Riepilogo IVA">
+                <ScrollViewer>
+                    <StackPanel Margin="20">
+                        <GroupBox Header="Dati Riepilogo IVA">
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Content="Aliquota IVA:"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtAliquotaIVA" Margin="5"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" Content="Natura:"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtNatura" Margin="5"/>
+
+                                <Label Grid.Row="2" Grid.Column="0" Content="Imponibile:"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtImponibile" Margin="5"/>
+
+                                <Label Grid.Row="3" Grid.Column="0" Content="Imposta:"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtImposta" Margin="5"/>
+                            </Grid>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+
+        <!-- Pulsanti di azione -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="20">
+            <Button x:Name="btnEsportaXML" Content="Esporta XML" Margin="10" Padding="20,10" 
+                    FontSize="14" FontWeight="Bold" Click="btnEsportaXML_Click"/>
+            <Button x:Name="btnCaricaXML" Content="Carica XML" Margin="10" Padding="20,10" 
+                    FontSize="14" Click="btnCaricaXML_Click"/>
+            <Button x:Name="btnNuovo" Content="Nuovo" Margin="10" Padding="20,10" 
+                    FontSize="14" Click="btnNuovo_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
